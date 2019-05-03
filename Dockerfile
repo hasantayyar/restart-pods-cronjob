@@ -5,4 +5,7 @@ WORKDIR /apps/
 
 ADD . /apps/
 
+ENV GCLOUD_PROJECT ""
+ENV CLUSTER_NAME ""
+
 CMD ["sh", "-c", "sh /apps/restarter.sh"]
