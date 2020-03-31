@@ -2,9 +2,18 @@
 
 Kubernetes cronjob resource to restart pods
 
-Requirements:
-- `GCLOUD_PROJECT` and `CLUSTER_NAME` env variables need to be in place.
-- `service-account.json` file should be mounted as secret.
+![restart](restart.gif)
 
 
-See `resource.yml` for customising the cronjob.
+## Installation
+
+- Update  `cron.yaml` file by setting `DEPLOYMENT_NAME` env variable to your deployment name to be restarted
+- Update schedule of the restart in `cron.yaml` 
+- Apply all the resrouces in this order
+
+```
+kubectl create -f rbac.yaml
+kubectl create -f cron.yaml
+```
+
+
